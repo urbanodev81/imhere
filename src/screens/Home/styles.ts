@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
       fontSize: 16
     },
     input: {
-        // flex:1,
+        flex:1,
         height: 56,
         backgroundColor: '#1F1E25',
         borderRadius: 5,

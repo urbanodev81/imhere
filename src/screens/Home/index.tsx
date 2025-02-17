@@ -15,14 +15,16 @@ export function Home() {
                 color:'red',
                 fontSize: 16
             }}>Open up App.tsx to start wssorking on your</Text>
-            <TextInput style={styles.input} 
-                placeholder='Nome do participante'
-                placeholderTextColor="#6b6b6b"/>
-            <TouchableOpacity style={styles.button} onPress={handleParticipantsAdd}>
-                <Text style={styles.buttonText}>
-                    +
-                </Text>
-            </TouchableOpacity>
+            <View style={styles.form}>
+                <TextInput style={styles.input} 
+                    placeholder='Nome do participante'
+                    placeholderTextColor="#6b6b6b"/>
+                <TouchableOpacity style={styles.button} onPress={handleParticipantsAdd}>
+                    <Text style={styles.buttonText}>
+                        +
+                    </Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
