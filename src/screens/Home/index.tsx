@@ -1,6 +1,8 @@
 import { Text, View, TextInput, TouchableOpacity, FlatList, Alert} from 'react-native';
 import {styles} from './styles'
 
+import { Participant } from '../../components/Participant';
+
 export function Home() {
      const participants = ['22222', '33333', '44444','55555','1111111','6666666','7777777','888888','9999999','10101010'];
 
@@ -24,7 +26,11 @@ export function Home() {
                         +
                     </Text>
                 </TouchableOpacity>
+
             </View>
+            <Participant />
+            <Participant />
+
         </View>
     )
 }
