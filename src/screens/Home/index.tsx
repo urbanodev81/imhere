@@ -1,4 +1,4 @@
-import { Text, View, TextInput, TouchableOpacity, FlatList, Alert} from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, FlatList, Alert, ScrollView} from 'react-native';
 import {styles} from './styles'
 
 import { Participant } from '../../components/Participant';
@@ -8,6 +8,10 @@ export function Home() {
 
     function handleParticipantsAdd(){
         alert("teste");
+    }
+
+    function handleParticipantRemove(name: string){
+        alert(`removido ${name}`);
     }
 
     return (
@@ -28,11 +32,19 @@ export function Home() {
                 </TouchableOpacity>
 
             </View>
-            <Participant name='Teste1' />
-            <Participant name='Teste2' />
-            <Participant name='Teste3' />
-            <Participant name='Teste4' />
+            <FlatList 
+                data={participants}
+                keyExtractor={item => item}
+                renderItem={({item }) =>(
+                    <Participant key={item} name={item} onRemove={() => handleParticipantRemove(item)} />
 
+                )}
+                ListEmptyComponent={() =>(
+                    <Text style={styles.listEmptyText}>
+                        Ninguém chegou no evento!
+                    </Text>
+                )}
+            />
         </View>
     )
 }
