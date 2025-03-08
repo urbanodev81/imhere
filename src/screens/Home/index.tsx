@@ -7,11 +7,24 @@ export function Home() {
      const participants = ['22222', '33333', '44444','55555','1111111','6666666','7777777','888888','9999999','10101010'];
 
     function handleParticipantsAdd(){
-        alert("teste");
+        if(participants.includes("Rodrigo")){
+            return Alert.alert("Participante Existe", "Já existe um participante com esse nome!");
+        }
     }
 
     function handleParticipantRemove(name: string){
-        alert(`removido ${name}`);
+        Alert.alert("Remover Participante", `Que remover o participante ${name}?`, 
+        [
+            {
+                text: 'Sim',
+                onPress: () =>Alert.alert("Deletado!")
+            },
+            {
+                text: 'Não', 
+                style: 'cancel'
+
+            }
+        ]);
     }
 
     return (
